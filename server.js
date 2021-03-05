@@ -68,9 +68,10 @@ function calculateRate (mail_type, weight){
       case 'stamped':
             letter_stamped.forEach(function(letter){
                 if (letter.weight === weight){
-                    console.log(letter.price);
+                    postage = letter.price;
                 }
             });
+            
             break;
       case 'metered':
 
@@ -90,5 +91,5 @@ function calculateRate (mail_type, weight){
             res.write("The operation is not supproted")
             res.end();
   }
-    return postage;
+  return postage;
 }
