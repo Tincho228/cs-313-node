@@ -71,25 +71,32 @@ function calculateRate (mail_type, weight){
                     postage = letter.price;
                 }
             });
-            
             break;
       case 'metered':
-
-            postage = parseFloat(num1) - parseFloat(num2);
+            letter_metered.forEach(function(letter){
+            if (letter.weight === weight){
+                postage = letter.price;
+                }
+            });
             break;
       case 'flats':
-
-            postage = parseFloat(num1) * parseFloat(num2);
+            letter_flats.forEach(function(letter){
+            if (letter.weight === weight){
+                postage = letter.price;
+                }
+            });
             break;
       case 'package':
-
+            retail_parcels.forEach(function(letter){
+            if (letter.weight === weight){
+                postage = letter.zone1;
+                }
+            });
             postage = parseFloat(num1) / parseFloat(num2);
             break;
-     
       default:
-            res.writeHead(400, {"Content-Type": "text/html"});
-            res.write("The operation is not supproted")
-            res.end();
+            postage = "The operation is not supported";
+            break;
   }
   return postage;
 }
