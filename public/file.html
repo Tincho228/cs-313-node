@@ -11,15 +11,18 @@
   </head>
   <body>
   <main>
-      <div class="container">
-            <h1>Assignment - Postal Rate Calculator</h1>
+      <div class="container bg-light">
+        <div class="row">
+          <div class="col-8">
+            <h1 class="bg-dark text-light" style="margin-top:30px;margin-bottom:30px;padding:10px">Assignment - Postal Rate Calculator</h1>
             <form action="/getRate" method="GET">
                 <div class="form-group">
-                  <label for="weight">Weight</label>
+                  <label for="weight">Weight (oz)</label>
                   <input type="number" name="weight" class="form-control" id="weight" required>
+                  <p>For weights over 3.5 ounces, see Large Envelopes prices.</p>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlSelect1">Example select</label>
+                    <label for="exampleFormControlSelect1">Mail type</label>
                     <select name="mail_type" class="form-control" id="mail_type">
                       <option value="stamped">Letters (Stamped)</option>
                       <option value="metered">Letters (Metered)</option>
@@ -30,6 +33,8 @@
                 
                 <button type="submit" class="btn btn-primary">Submit</button>
               </form>
+            </div>
+          </div>
       </div>
   </main>
     <!-- Optional JavaScript -->
